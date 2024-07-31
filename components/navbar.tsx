@@ -4,6 +4,7 @@ import Link from "next/link";
 import MainNav from "./main-nav";
 import getCategories from "@/actions/get-categories";
 import NavbarActions from "./navbar-actions";
+import { ShoppingCart } from "lucide-react";
 
 export const revalidate = 0;
 
@@ -13,8 +14,9 @@ const Navbar = async () => {
   return (
     <div className="border-b">
       <Container>
-        <div className="relative px-4 lg:px-8 sm:px-6 flex h-16 items-center">
+        <div className="relative px-4 lg:px-8 sm:px-6 flex h-16 items-center bg-orange-400 dark:bg-red-100">
           <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
+            <ShoppingCart size={24} />
             <p className="font-bold text-xl">Store</p>
           </Link>
           <MainNav data={categories} />
